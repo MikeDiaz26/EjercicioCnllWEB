@@ -1,0 +1,61 @@
+﻿@model EjercicioCanellaWEB.Models.Vehiculo;
+
+@{
+    ViewBag.Title = "Editar";
+}
+
+
+<h2>Edit</h2>
+<h2>@ViewBag.Vehiculo.Placa</h2>
+
+
+@using (Html.BeginForm("Edit", "Vehiculo"))
+{
+    <div class="form-horizontal">
+        <input name="Placa" type="hidden" value="@ViewBag.Vehiculo.Placa" />
+        <hr />
+        <div class="form-group">
+            <label class="control-label col-md-2">Marca:</label>
+            <div class="col-md-10">
+                <input value="@ViewBag.Vehiculo.Marca" name="Marca" />
+            </div>
+        </div>
+        <div class="form-group">
+             <label class="control-label col-md-2">Modelo:</label>
+            <div class="col-md-10">
+                <input value="@ViewBag.Vehiculo.Modelo" name="Modelo" />
+            </div>
+        </div>
+        <div class="form-group">
+             <label class="control-label col-md-2">Año:</label>
+            <div class="col-md-10">
+                <input value="@ViewBag.Vehiculo.Anio" name="Anio" />
+            </div>
+        </div>
+        <div class="form-group">
+             <label class="control-label col-md-2">Color:</label>
+            <div class="col-md-10">
+                <input value="@ViewBag.Vehiculo.Color" name="Color" />
+            </div>
+        </div>
+        <div class="form-group">
+             <label class="control-label col-md-2">Precio Renta:</label>
+            <div class="col-md-10">
+                <input value="@ViewBag.Vehiculo.PrecioRenta" name="PrecioRenta" />
+            </div>
+        </div>
+
+
+
+        <br/>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Guardar" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Regresar a lista", "Index")
+</div>

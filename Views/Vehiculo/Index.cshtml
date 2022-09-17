@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Vehiculo>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Autors List</h2>
+
+@Html.ActionLink("Crear Nuevo Vehículo","Create","Vehiculo")
+<br />
+<br />
+<table>
+    <thead>
+        <tr>
+            <th>Placa</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Año</th>
+            <th>Color</th>
+            <th>Precio Renta</th>
+            <th>Acción</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var country in Model) {
+            <tr>
+                <td>@country.Placa</td>
+                <td>@country.Marca</td>
+                <td>@country.Modelo</td>
+                <td>@country.Anio</td>
+                <td>@country.Color</td>
+                <td>@country.PrecioRenta</td>
+                <td>
+                    @Html.ActionLink("Editar","Edit","Vehiculo", new {Placa = @country.Placa })
+                    |
+                    @Html.ActionLink("Ver","Details","Vehiculo", new {Placa = @country.Placa })
+                    |
+                    @Html.ActionLink("Eliminar","Delete","Vehiculo", new {Placa = @country.Placa })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

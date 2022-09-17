@@ -1,0 +1,33 @@
+﻿@model Vehiculo
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@ViewBag.Vehiculo.Placa</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Placa</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Año</th>
+            <th>Color</th>
+            <th>Precio Renta</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@ViewBag.Vehiculo.Placa</td>
+            <td>@ViewBag.Vehiculo.Marca</td>
+            <td>@ViewBag.Vehiculo.Modelo</td>
+            <td>@ViewBag.Vehiculo.Anio</td>
+            <td>@ViewBag.Vehiculo.Color</td>
+            <td>@ViewBag.Vehiculo.PrecioRenta</td>
+        </tr>
+    </tbody>
+</table>
+
+<div>
+    @Html.ActionLink("Regresar a lista", "Index")
+</div>
